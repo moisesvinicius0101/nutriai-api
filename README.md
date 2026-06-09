@@ -57,21 +57,28 @@ A API utiliza o protocolo **OAuth2 com HTTPBearer**. O fluxo de segurança funci
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/moisesvinicius0101/nutriai-api.git](https://github.com/moisesvinicius0101/nutriai-api.git)
+   git clone https://github.com/moisesvinicius0101/nutriai-api.git
    cd nutriai-api
+## Crie e ative o ambiente virtual (venv):  
 
 python -m venv venv
-# No Windows (PowerShell):
+### No Windows (PowerShell):
 .\venv\Scripts\Activate.ps1
-# No Linux/Mac:
+### No Linux/Mac:
 source venv/bin/activate
 
+## Instale as dependências:
 pip install -r requirements.txt
 
-DATABASE_URL=postgresql://usuario:senha@localhost:5432/nutriai_db
-SECRET_KEY=sua_chave_secreta_super_segura_aqui
-ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=30
+## Configure as Variáveis de Ambiente (.env):
 
+DATABASE_URL=postgresql://usuario:senha@localhost:5432/nutriai_db
+
+SECRET_KEY=sua_chave_secreta_super_segura_aqui
+
+ALGORITHM=HS256
+
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+## Inicie o servidor
 uvicorn app.main:app --reload
 
